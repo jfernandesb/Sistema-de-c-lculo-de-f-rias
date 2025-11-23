@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+body {width:100%;margin:0;padding:0;background:#DDD;}
+
+/* HEADER */
+header {width:100%;height:70px;background:#FFF;}
+  #logoarea{width:10%;height:70%;padding:1% 0 0 0;margin:auto;}
+  #voltarea{width:5%;height:60%;padding:1%;margin:0.7% 0 0 1%;float:left;}
+   #voltarea a{font:bold 16px Arial;color:#888;text-decoration:underline #888;}
+    #voltarea a:hover{color:#a12830;}
+	
+/* SECTION CORPO */
+section#corpo{width:100%;height:1500px;background:#DDD;}
+
+/* FILTRO FGTS*/
+  #facilitador{width:60%;height:25%;border-top:5px solid #B1343A;margin-left:20%;margin-top:3%;padding:1% 3% 1% 3%;border-radius:5px;background:#FFF;}
+  .facil_tit{height:12%;font:bold 17px arial;color:#a12830;text-decoration:underline;}
+  .facil_subtit{height:12%;font:bold 13px arial;}
+  .titulo_input{width:12%;font:bold 12px arial;}
+  .facil_input{width:50px;font:bold 12px arial;}
+  .facil_select{width:15%;font:bold 12px arial;}
+  .input{width:90px;height:20px;border-radius:3px;text-align: center;}
+  .select{height:28px;border-radius:3px;}
+  .botaofil {width:20%;height:30px;background:#AAA;border-radius:5px;border:none; text-align: center;
+   box-shadow:0px 2px 1px #555;font:bold 16px arial;color:#FFF;-webkit-transition:0.3s;float:right;}
+  .botaofil:hover{background:#b00d0c;}
+  .botaoabrir {width:40%;height:100%;margin:0;background:#AAA;border-radius:5px;border:none;
+  box-shadow:0px 2px 1px #555;font:bold 16px arial;color:#FFF;-webkit-transition:0.3s;}
+  .botaoabrir:hover{background:#b00d0c;} 
+  .input_resul{width:70%;border:none; background:#FFF; text-align:center;}
+  .legenda{width:20px; height:20px;}
+  
+  #resultado{width:54%;margin-top:0.3%;margin-left:20%;padding:1% 3% 1% 3%;background:#FFF;display:none;}
+    #resultado table {width:95%;margin-left:3%;text-align:center; border-collapse: collapse;}
+    #resultado table tr td {border:1px solid #000;}
+    .subtit_resul{height:20px;font:bold 13px arial;color:#a12830;padding:1% 0 1% 0;text-align:center;}
+	  .dados_titulo{height:25px;background:#DDD;font:bold 12px arial;}
+     .dados_resul{height:28px;font:normal 12px arial #000;}
+
+ /*SUMIR TAGS VAZIAS*/
+ .sumir{display:none;}
+ 
+ /*TEXTO*/
+ .calendar{width:60%;margin:0 0 0 2%;}
+ #txt_cest{width:60%;font:normal 13px Helvetica;margin:0.5% 0 0 20%;padding:0.5% 0 0.5% 0;background:#FFF;}
+   #txt_cest p{padding:0 2% 0 2%;}
+ 
+ /*AVISO SEM RESULTADO*/
+ .aviso_registro{width:60%;text-align:center;font:bold 13px Arial;background:#FFF;margin:auto;}
+ 
+ /*AVISO ATUALIZAÇÃO*/
+ #avisos{width:40%;background:#FFFF80;margin:auto;margin-top:2%;}
+ .avisos{width:100%;font:bold 13px Helvetica;color:red;text-align:center;text-decoration:underline;}
+ 
+ 
+  /*FOOTER */
+  footer{width:100%;height:100px;}

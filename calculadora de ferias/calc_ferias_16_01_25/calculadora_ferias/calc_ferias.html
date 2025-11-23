@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <!--Remove o cache da página-->
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>...:::: Calculadora de Férias ::::...</title>
+    <link rel="shortcut icon" href="../imagens/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"               integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/estilo_modelo_simples.css" />
+</head>
+
+<body>
+  <header id="header">
+      <figure id="logo">
+        <a href="http://www.fisconet.com.br/" target="_blank"><img src="../imagens/logo.png" /></a>
+      </figure>
+      <nav id="nav">
+        <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+          Menu
+          <span id="hamburger"></span>
+        </button>
+        <ul id="menu">
+          <li>
+            <a href="http://www.fisconet.com.br/colecao-fiscal" target="_blank">Coleção Fiscal</a>
+          </li>
+          <li>
+            <a
+              href="http://www.fisconet.com.br/colecao-trabalhista" target="_blank">Coleção Trabalhista</a>
+          </li>
+          <li>
+            <a href="http://www.fisconet.com.br/colecao-contabil" target="_blank">Coleção Contábil</a>
+          </li>
+          <li>
+            <a href="https://fisconetcursos.com.br/" target="_blank">Cursos</a>
+          </li>
+          <li>
+            <a href="http://www.fisconet.com.br/pagina/empresa" target="_blank">Sobre a Empresa</a>
+          </li>
+        </ul>
+      </nav>
+  </header>
+
+  <main>
+      <div id="atualiza">
+         <ul>
+          <!-- START BLOCK : lista_avisos -->
+          <li class="lista_atualiza"><p>{desc_avisos}</p></li>
+          <!-- END BLOCK : lista_avisos -->
+         </ul>
+      </div>
+      <div id="ferramenta">
+      <div id="tit_ferramenta">
+        <h2>Calculadora de Férias</h2>
+        <p>
+          Utilize esta ferramenta para simular o cálculo de férias, informando o salário e o período de gozo do trabalhador.
+        </p>
+      </div>
+    <form method="post" name="form_ferramenta">
+      <div class="formulario">
+        <label>Quantidade de Dias de Férias:</label>
+        <input 
+          class="input" 
+          type="text" 
+          id="dia_inicio"
+          maxlength="5"
+          placeholder="00" />
+        <button class="ajuda esconder" type="button">?</button>
+      </div>
+      <div id="balao_prim" class="sumir balao">
+        <p><b>Cálculo Por Dentro</b>: Conforme o <a href="https://www.confaz.fazenda.gov.br/legislacao/convenios/2021/CV236_21" target="_blank"> §1° da Cláusula Segunda do Convênio ICMS Nº 236/2021</a> o ICMS compõe sua própria base.</p>
+      </div>
+      <div class="formulario">
+        <label>Mês de Gozo: </label>
+        <select id="mes_inicio">
+          <option value="">Selecione</option>
+          <option value="1">Janeiro</option>
+          <option value="2">Fevereiro</option>
+          <option value="3">Março</option>
+          <option value="4">Abril</option>
+          <option value="5">Maio</option>
+          <option value="6">Junho</option>
+          <option value="7">Julho</option>
+          <option value="8">Agosto</option>
+          <option value="9">Setembro</option>
+          <option value="10">Outubro</option>
+          <option value="11">Novembro</option>
+          <option value="12">Dezembro</option>
+        </select>
+        <button class="ajuda esconder" type="button">?</button>
+      </div>
+      
+      <div class="formulario">
+        <p>*Caso o periodo de gozo iniciar em um mês e terminar em outro, utilize este campo adicional abaixo para informar o restante dos dias.</p>
+      </div>
+      <div id="balao_seg" class="sumir balao">
+        <p>Marque o checkbox quando a mercadoria tiver origem importada do exterior com similar nacional ou possua Conteúdo de Importação superior a 40% (quarenta por cento).</p>
+      </div>
+      <div class="formulario">
+        <label>Quantidade de Dias de Férias:</label>
+        <input 
+          class="input" 
+          type="text" 
+          id="dia_fim"
+          maxlength="5"
+          placeholder="00" />
+        <button class="ajuda esconder" type="button">?</button>
+      </div>
+      <div class="formulario">
+        <label>Mês de Gozo: </label>
+        <select id="mes_fim">
+          <option value="">Selecione</option>
+          <option value="1">Janeiro</option>
+          <option value="2">Fevereiro</option>
+          <option value="3">Março</option>
+          <option value="4">Abril</option>
+          <option value="5">Maio</option>
+          <option value="6">Junho</option>
+          <option value="7">Julho</option>
+          <option value="8">Agosto</option>
+          <option value="9">Setembro</option>
+          <option value="10">Outubro</option>
+          <option value="11">Novembro</option>
+          <option value="12">Dezembro</option>
+        </select>
+        <button class="ajuda esconder" type="button">?</button>
+      </div>
+      ___________________________________________________________________________________________________________
+      <div class="formulario">
+        <label>Salário Base (R$):</label>
+        <input 
+          class="input" 
+          type="text" 
+          id="salario"
+          maxlength="14"
+          placeholder="R$ 00,00">
+        <button class="ajuda esconder" type="button">?</button>
+      </div>
+      <div class="formulario">
+        <label>	Dias de Abono Pecuniário:</label>
+        <input 
+            class="input" 
+            type="text"
+            maxlength="5" 
+            id="dias_abono"
+            placeholder="00"
+            >
+        <button  class="ajuda esconder" type="button">?</button>
+      </div>
+      <div id="balao_ter" class="sumir balao">
+        <p>Consulte a Aliquota do IPI, <a href="http://pesquisaipi.fisconet.com.br/tipi_decreto_11158_2022/" target="_blank">clicando aqui</a>.</p>
+      </div>
+      
+      <div class="formulario">
+        <label>Quant. Dependentes:</label>
+        <input 
+          class="input" 
+          type="text"
+          maxlength="5"
+          id="dependentes"
+          placeholder="00"
+          >
+        <button  class="ajuda esconder" type="button">?</button>
+      </div>
+      <div id="balao_quar" class="sumir balao">
+        <p>Consulte a Aliquota Interna do ICMS, <a href="https://aliquotainternaicms.fisconet.com.br/" target="_blank">clicando aqui</a>.</p>
+      </div>
+      
+      <div id="bloco_botao">
+        <button class="botao" id="bt_calcular" type="button"><i class="fa-solid fa-calculator"></i> Calcular</button>
+      </div>
+      <div id="aviso" class="sumir">
+        <p></p>
+      </div>
+      <div id="resultado" class="sumir">
+        <div class="overflow">
+          <table>
+            <tr class="tit_resul"><td colspan="5">Base para Cálculo da Remuneração das Férias</td></tr>
+            <tr>
+              <th class="border">Salário Base</th>
+              <th class="border">Dependentes</th>
+              <th class="border">Base de Cálculo INSS</th>
+              <th class="border">Base de Cálculo I.R.</th>
+              <th>Base de Cálculo FGTS</th>
+            </tr>
+            <tr>
+              <td class="border" id="salario_i"></td>
+              <td class="border" id="dependentes_i"></td>
+              <td class="border" id="base_inss_i"></td>
+              <td class="border" id="base_ir_i"></td>
+              <td id="base_fgts_i"></td>
+            </tr>
+            <tr>
+              <th class="border">Dias de Gozo</th>
+              <th class="border">Valor dos Dependentes</th>
+              <th class="border">Alíquota Efetiva INSS</th>
+              <th class="border">Alíquota I.R. (%)</th>
+              <th class="border">Alíquota FGTS (%)</th>
+            </tr>
+            <tr>
+              <td class="border" id="total_dias_i"></td>
+              <td class="border" id="vlr_dependts_i"></td>
+              <td class="border" id="aliq_inss_i"></td>
+              <td class="border" id="aliq_ir_i"></td>
+              <td id="aliq_fgts_i"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="overflow">
+          <table>
+            <tr class="tit_resul"><td colspan="3">Descontos</td></tr>
+            <tr>
+              <th class="border">I.N.S.S Férias</th>
+              <th class="border">I.R. Férias</th>
+              <th>Total Descontos</th>
+            </tr>
+            <tr>
+              <td class="border" id="vlr_inss_i"></td>
+              <td class="border" id="vlr_ir_i"></td>
+              <td id="total_desc_i"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="overflow">
+          <table>
+            <tr class="tit_resul"><td colspan="5">Recebimentos Líquidos</td></tr>
+            <tr>
+              <th class="border">Férias</th>
+              <th class="border">1/3 de Férias</th>
+              <th class="border">Abono</th>
+              <th class="border">FGTS Férias</th>
+              <th>Total Liquido</th>
+            </tr>
+            <tr>
+              <td class="border" id="ferias_liq_i"></td>
+              <td class="border" id="ferias_liq_ter_i"></td>
+              <td class="border" id="total_abono_i"></td>
+              <td class="border" id="vlr_fgts_i"></td>
+              <td id="total_prov_i"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </form>
+      <div>
+        <h4>Algumas Tabelas Importantes:</h4>
+      </div>
+      <div>
+        <p>- Férias Proporcionais:</p>
+        <div class="overflow">
+          <table>
+            <tr>
+              <th class="border">Férias proporcionais</th>
+              <th class="border">até 5 faltas</th>
+              <th class="border">de 6 a 14 faltas</th>
+              <th class="border">de 15 a 23 faltas</th>
+              <th>de 24 a 32 faltas</th>
+            </tr>
+            <tr>
+              <td class="border">1/12</td>
+              <td class="border">2,5 dias</td>
+              <td class="border">2 dias</td>
+              <td class="border">1,5 dias</td>
+              <td>1 dia</td>
+            </tr>
+            <tr>
+              <td class="border">2/12</td>
+              <td class="border">5 dias</td>
+              <td class="border">4 dias</td>
+              <td class="border">3 dias</td>
+              <td>2 dias</td>
+            </tr>
+            <tr>
+              <td class="border">3/12</td>
+              <td class="border">7,5 dias</td>
+              <td class="border">6 dias</td>
+              <td class="border">4,5 dias</td>
+              <td>3 dias</td>
+            </tr>
+            <tr>
+              <td class="border">4/12</td>
+              <td class="border">10 dias</td>
+              <td class="border">8 dias</td>
+              <td class="border">6 dias</td>
+              <td>4 dias</td>
+            </tr>
+            <tr>
+              <td class="border">5/12</td>
+              <td class="border">12,5 dias</td>
+              <td class="border">10 dias</td>
+              <td class="border">7,5 dias</td>
+              <td>5 dias</td>
+            </tr>
+            <tr>
+              <td class="border">6/12</td>
+              <td class="border">15 dias</td>
+              <td class="border">12 dias</td>
+              <td class="border">9 dias</td>
+              <td>6 dias</td>
+            </tr>
+            <tr>
+              <td class="border">7/12</td>
+              <td class="border">17,5 dias</td>
+              <td class="border">14 dias</td>
+              <td class="border">10,5 dias</td>
+              <td>7 dias</td>
+            </tr>
+            <tr>
+              <td class="border">8/12</td>
+              <td class="border">20 dias</td>
+              <td class="border">16 dias</td>
+              <td class="border">12 dias</td>
+              <td>8 dias</td>
+            </tr>
+            <tr>
+              <td class="border">9/12</td>
+              <td class="border">22,5 dias</td>
+              <td class="border">18 dias</td>
+              <td class="border">13,5 dias</td>
+              <td>9 dias</td>
+            </tr>
+            <tr>
+              <td class="border">10/12</td>
+              <td class="border">25 dias</td>
+              <td class="border">20 dias</td>
+              <td class="border">15 dias</td>
+              <td>10 dias</td>
+            </tr>
+            <tr>
+              <td class="border">11/12</td>
+              <td class="border">27,5 dias</td>
+              <td class="border">22 dias</td>
+              <td class="border">16,5 dias</td>
+              <td>11 dias</td>
+            </tr>
+            <tr>
+              <td class="border">12/12</td>
+              <td class="border">30 dias</td>
+              <td class="border">24 dias</td>
+              <td class="border">18 dias</td>
+              <td>12 dias</td>
+            </tr>
+            <tr>
+              <td colspan="5">Obs: Acima de 32 faltas injustificadas no período aquisitivo, o empregado perde ás férias correspondente.</td>
+            </tr>
+          </table>
+        </div>
+        <br>
+        <div class="overflow">
+          <p>- Tabela IRRF:</p>
+
+          <div>
+            <table>
+              <tr>
+                <th class="border">Base de Cálculo (R$)</th>
+                <th class="border">Alíquota (%)</th>
+                <th>Parcela a Deduzir do IR (R$)</th>
+              </tr>
+              <tr>
+                <td class="border">De 2.259,21 até 2.826,65</td>
+                <td class="border">7,5%</td>
+                <td>169,44</td>
+              </tr>
+              <tr>
+                <td class="border">De 2.826,66 até 3.751,05</td>
+                <td class="border">15%</td>
+                <td>381,44</td>
+              </tr>
+              <tr>
+                <td class="border">De 3.751,06 até 4.664,68</td>
+                <td class="border">22,5%</td>
+                <td>662,77</td>
+              </tr>
+              <tr>
+                <td class="border">Acima de 4.664,68</td>
+                <td class="border">27,5%</td>
+                <td>896,00</td>
+              </tr>
+              <tr>
+                <td class="border">Dependentes: R$ 189,59</td>
+                <td class="border">Desconto simplificado: R$ 564,80</td>
+                <td>-</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <br>
+        <div class="overflow">
+          <p>- Tabela INSS:</p>
+          <div>
+            <table>
+              <tr>
+                <th class="border">Base de Cálculo (R$)</th>
+                <th>Alíquota (%)</th>
+              </tr>
+              <tr>
+                <td class="border">até R$ 1.518,00</td>
+                <td>7,5%</td>
+              </tr>
+              <tr>
+                <td class="border">de R$ 1.518,01 até R$ 2.793,88</td>
+                <td>9%</td>
+              </tr>
+              <tr>
+                <td class="border">de R$ 2.793,89 até R$ 4.190,83</td>
+                <td>12%</td>
+              </tr>
+              <tr>
+                <td class="border">de R$ 4.190,84 até R$ 8.157,41</td>
+                <td>14%</td>
+              </tr>
+              <tr>
+                <td colspan="2">Teto Máximo de Desconto do Empregado = R$ 908,85</td>
+              </tr>
+              <tr>
+                <td colspan="2">Teto Máximo de Desconto do Contribuinte Individual = R$ 856,46</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+  </main>
+
+  <footer>
+    <div id="footer_content">
+      <!--Listas do roda-pé-->
+      <ul class="footer_list">
+        <li>
+          <h3>Áreas</h3>
+        </li>
+        <li>
+          <a href="http://www.fisconet.com.br/colecao-trabalhista" target="_blank"
+              class="footer_link">
+              Coleção Trabalhista
+          </a>
+        </li>
+        <li>
+          <a
+              href="http://www.fisconet.com.br/colecao-contabil" target="_blank"
+              class="footer_link">
+              Coleção Contábil
+          </a>
+        </li>
+        <li>
+            <a href="http://www.fisconet.com.br/colecao-fiscal" target="_blank"
+              class="footer_link">
+              Coleção Fiscal
+            </a>
+        </li>
+      </ul>
+      <ul class="footer_list">
+        <li>
+          <h3>Cursos</h3>
+        </li>
+        <li>
+          <a href="https://fisconetcursos.com.br/cursos-ao-vivo/" target="_blank"
+            class="footer_link">
+            Cursos AO VIVO
+          </a>
+        </li>
+        <li>
+          <a href="https://fisconetcursos.com.br/e-books/" target="_blank" class="footer_link">
+            E-Books
+          </a>
+        </li>
+        <li>
+          <a href="https://fisconetcursos.com.br/todos/" target="_blank" class="footer_link">
+            Todos os Cursos
+          </a>
+        </li>
+      </ul>
+      <div id="footer_subscribe">
+        <h3>Assinatura</h3>
+        <!--Menu de assinatura-->
+        <p>Gostou? Considere assinar conosco !</p>
+        <div id="assinar">
+          <a href="http://www.fisconet.com.br/pagina/produtos" target="_blank">
+            <button id="btn_assinar">Assinar</button>
+          </a>
+        </div>
+      </div>
+      <div id="footer_contacts">
+      <!--Parte de redes sociais-->
+        <h1>Fale Conosco!</h1>
+        <a href="http://www.fisconet.com.br/contato" target="_blank"
+          id="telefones">
+          TELEFONES
+        </a>
+        <p>Nos siga em nossas redes sociais:</p>
+        <!--Parte de redes sociais-->
+        <div id="footer_social_media">
+            <a href="https://www.instagram.com/fisconetoficial/?utm_medium=copy_link"
+              target="_blank"
+              class="footer_link"
+              id="instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/fisconetoficial" target="_blank"
+              class="footer_link"
+              id="facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=5551994775506"
+              target="_blank"
+              class="footer_link"
+              id="whatsapp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </div>
+      </div>
+    </div>
+    <div id="direito_ltda">
+      <p>Fisconet Edições de Periódicos LTDA     © Todos os direitos reservados</p>
+    </div>
+  </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
